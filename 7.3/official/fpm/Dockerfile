@@ -17,6 +17,8 @@ RUN     apt-get update && apt-get install -y \
             lsof \
             mariadb-client \
             vim \
+            lynx \
+            psmisc \
             zip
 
 RUN     docker-php-ext-configure \
@@ -34,7 +36,8 @@ RUN     docker-php-ext-install \
             pdo_mysql \
             soap \
             xsl \
-            zip
+            zip \
+            sockets
 
 RUN     pecl channel-update pecl.php.net \
             && pecl install xdebug \
